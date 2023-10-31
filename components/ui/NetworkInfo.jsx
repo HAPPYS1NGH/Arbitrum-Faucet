@@ -15,7 +15,7 @@ function NetworkInfo({ network }) {
         const fetchData = async () => {
             console.log("Fetching data")
             try {
-                const response = await fetch(`/api/${network.toLowerCase()}`);
+                const response = await fetch(`/api/${network.toLowerCase()}`, { cache: 'force-cache', next: { revalidate: 3600 } });
                 const data = await response.json();
                 setBlockNumber(data.blockNumber);
                 setGasPrice(data.gasPrice);
