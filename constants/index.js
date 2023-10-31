@@ -68,6 +68,7 @@ export const faucetInfo = {
       dailySupply: "15",
       required: "None",
       image: "faucets/bwarelabs.svg",
+      address: "0xb76debe515171c0fe30b98f117bb9c11bbb6ad5d",
     },
   ],
 }
