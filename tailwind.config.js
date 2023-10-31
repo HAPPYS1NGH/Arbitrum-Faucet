@@ -13,7 +13,23 @@ module.exports = {
       moon: "#E5E5E5",
       white: "#FFFFFF",
     },
+
     extend: {
+      // keyframes: {
+      //   "slide-left": {
+      //     "0%": { transform: "translateX(-100%)" },
+      //     "100%": { transform: "translateX(100%);" },
+      //   },
+      // },
+      // animation: {
+      //   animation: "slide-left 4s infinite",
+      // },
+      width: {
+        100: "450px",
+      },
+      borderWidth: {
+        3: "3px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

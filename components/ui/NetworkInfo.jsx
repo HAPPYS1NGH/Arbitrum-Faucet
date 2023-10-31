@@ -1,28 +1,60 @@
 import React from 'react'
 import { networks } from '@/constants'
 import Link from 'next/link'
-import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 function NetworkInfo({ network }) {
-    const leftNetwork = networks[(networks.indexOf(network) - 1) % networks.length]
-    const rightNetwork = networks[(networks.indexOf(network) + 1) % networks.length]
+
+    const leftNetwork = networks[(networks.indexOf(network) - 1) == -1 ? networks.length - 1 : networks.indexOf(network) - 1]
+    const rightNetwork = networks[(networks.indexOf(network) + 1) == networks.length ? 0 : networks.indexOf(network) + 1]
     return (
-        <div className='text-white text-center w-3/4'>
-            <div className='flex bg-electric-blue p-3 border-white border-2 items-center justify-between'>
+        <div className='text-white text-center mb-6  w-100 border-white rounded-lg border-3'>
+            <div className='flex bg-electric-blue p-5  items-center justify-between'>
                 <Link href={`/${leftNetwork}`}>
-                    <FaRegArrowAltCircleLeft className="text-white text-2xl" />
+                    <AiOutlineArrowLeft className="text-white text-2xl" />
                 </Link>
                 <h1 className='mx-3 font-bold text-xl'>{network.toUpperCase()}</h1>
                 <Link href={`/${rightNetwork}`}>
-                    <FaRegArrowAltCircleRight className="text-2xl" />
+                    <AiOutlineArrowRight className="text-2xl" />
                 </Link>
             </div>
-            <div className=''>
+            <div className='flex justify-around py-5  border-t-3 '>
                 <div>
-                    <p>Latest Block</p>
-                    <h1>jjjj</h1>
+                    <p className='text-sm'>Latest Block</p>
+                    <h1 className=' text-lg font-semibold '>1234555</h1>
+                </div>
+                <div>
+                    <p className='text-sm'>Gas Cost</p>
+                    <h1 className=' text-lg font-semibold'>1 Gwei</h1>
                 </div>
             </div>
+            <div className='bg-white text-navy text-xs py-2 tracking-wider '>
+                <div style={{ position: 'relative' }}>
+                    <div
+                        style={{
+                            animationName: 'slide-left',
+                            animationDuration: '7s',
+                            animationTimingFunction: 'linear',
+                            animationIterationCount: 'infinite',
+                        }}
+                    >
+                        Goerli is getting depraceted so move on to Sepolia.
+                    </div>
+                    <style>
+                        {`
+          @keyframes slide-left {
+            0% {
+              transform: translateX(100%); /* Move the element off-screen to the right */
+            }
+            100% {
+              transform: translateX(-100%); /* Move the element off-screen to the left */
+            }
+          }
+        `}
+                    </style>
+                </div>
+            </div>
+
         </div>
     )
 }
