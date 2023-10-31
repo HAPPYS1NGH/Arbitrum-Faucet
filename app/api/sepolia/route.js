@@ -1,4 +1,4 @@
-import { sepoliaClient } from "lib/client"
+import { sepoliaClient } from "@/lib/client"
 
 export async function GET() {
   let blockNumber = await sepoliaClient.getBlockNumber()

@@ -1,4 +1,4 @@
-import { goerliClient } from "lib/client"
+import { goerliClient } from "@/lib/client"
 
 export async function GET() {
   console.log("goerliClient", goerliClient)
