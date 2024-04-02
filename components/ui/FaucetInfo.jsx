@@ -12,11 +12,11 @@ function FaucetInfo({ network }) {
             faucets.map((faucet) => {
                 console.log(faucet)
                 return (
-                    <div className="border-3 border-white w-100 rounded-lg text-white  my-6
+                    <div key={faucet.name} className="border-3 border-white sm:w-100 w-96 rounded-lg text-white  my-6
                      ">
                         <div className="flex p-5 gap-3">
                             <div>
-                                <Link href={faucet.link}  >
+                                <Link href={faucet.link} target="_blank" >
                                     <Image src={`/${faucet.image}`} alt={faucet.name} width={60} height={60} />
                                 </Link>
                             </div>
@@ -24,7 +24,7 @@ function FaucetInfo({ network }) {
                                 <h1 className="text-2xl  leading-none font-bold">
                                     {faucet.name}
                                 </h1>
-                                <Link href={faucet.link} className="text-sm" >
+                                <Link href={faucet.link} className="text-sm" target="_blank" >
                                     {faucet.link.replace("https://", "")}
                                 </Link>
                             </div>
@@ -50,8 +50,10 @@ function FaucetInfo({ network }) {
                                 <h1 className='  font-semibold '>{faucet.dailySupply}</h1>
                             </div>
                             <div>
-                                <p className='text-sm'>Required</p>
-                                <h1 className=' font-semibold'>{faucet.required}</h1>
+                                <p className='text-sm none'>Required</p>
+                                <h1 className='block sm:hidden font-semibold'>  {faucet.required.length > 10 ? faucet.required.substring(0, 10) + '..' : faucet.required}</h1>
+                                <h1 className='hidden sm:block font-semibold'>{faucet.required}</h1>
+
                             </div>
                         </div>
 

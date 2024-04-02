@@ -28,7 +28,7 @@ function NetworkInfo({ network }) {
     }, []);
 
     return (
-        <div className='text-white text-center mb-6  w-100 border-white rounded-lg border-3'>
+        <div className='text-white text-center mb-6 sm:w-100 w-96 border-white rounded-lg border-3'>
             <div className='flex bg-electric-blue p-5  items-center justify-between'>
                 <Link href={`/${leftNetwork}`}>
                     <AiOutlineArrowLeft className="text-white text-2xl" />
