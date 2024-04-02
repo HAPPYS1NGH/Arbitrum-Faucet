@@ -1,17 +1,15 @@
-import Link from "next/link"
+import Link from "next/link";
 
 function Header() {
     return (
-        <header className="m-20 ">
-            <Link
-                className=" text-center font-bold text-6xl tracking-tight	 shover:cursor-pointer"
-                href="/"
-            >
-                <span className=" text-electric-blue">ARBITRUM </span>
+        <header className="m-12 mt-16 md:m-12 lg:m-16 xl:m-20">
+            <Link href="/" className="block text-center font-bold text-3xl sm:text-5xl md:text-6xl tracking-tight hover:cursor-pointer">
+                <span className="text-electric-blue">ARBITRUM </span>
                 <span className="text-moon">FAUCET</span>
+
             </Link>
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;
