@@ -27,6 +27,17 @@ export const faucetInfo = {
   ],
   ArbSepolia: [
     {
+      name: "Ethglobal",
+      link: "https://ethglobal.com/faucet",
+      maxAmount: "0.05",
+      minAmount: "0.05",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "EthGlobal Account",
+      image: "faucets/ethglobal.svg",
+      address: "0xcCa1595278f5B8CFdA0380943Af9b56493fA14dE",
+    },
+    {
       name: "Triangle Platform",
       link: "https://faucet.triangleplatform.com/arbitrum/sepolia",
       maxAmount: "0.001",
@@ -71,7 +82,7 @@ export const faucetInfo = {
       address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
     },
     {
-      name: "Chainlink ",
+      name: "Chainlink",
       link: "https://faucets.chain.link/arbitrum-sepolia",
       maxAmount: "0.25",
       minAmount: "0.25",
@@ -82,7 +93,7 @@ export const faucetInfo = {
       address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
     },
     {
-      name: "L2 Faucet ",
+      name: "L2 Faucet",
       link: "https://www.l2faucet.com/arbitrum",
       maxAmount: "0.1",
       minAmount: "0.1",
