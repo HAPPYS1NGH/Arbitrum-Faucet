@@ -1,8 +1,8 @@
-import { sepoliaClient } from "@/lib/client"
+import { arbitrumSepoliaClient } from "@/lib/client"
 
 export async function GET() {
-  let blockNumber = await sepoliaClient.getBlockNumber()
-  let gasPrice = await sepoliaClient.getGasPrice()
+  let blockNumber = await arbitrumSepoliaClient.getBlockNumber()
+  let gasPrice = await arbitrumSepoliaClient.getGasPrice()
   blockNumber = blockNumber.toString()
   gasPrice = gasPrice.toString()
   gasPrice = gasPrice / 1e9
