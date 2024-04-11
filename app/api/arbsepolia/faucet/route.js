@@ -3,7 +3,7 @@ import { faucetInfo } from "@/constants"
 
 export async function GET() {
   try {
-    const faucets = faucetInfo.Sepolia
+    const faucets = faucetInfo.ArbSepolia
     console.log("faucets", faucets)
     const addresses = faucets.map((faucet) => faucet.address)
     console.log("addresses", addresses)
