@@ -1,10 +1,10 @@
-export const networks = ["Goerli", "Sepolia", "Stylus"]
+export const networks = ["Sepolia", "ArbSepolia", "Stylus"]
 
 export const faucetInfo = {
-  Goerli: [
+  Sepolia: [
     {
       name: "QuickNode",
-      link: "https://faucet.quicknode.com/arbitrum/goerli",
+      link: "https://faucet.quicknode.com/ethereum/sepolia",
       maxAmount: "0.05",
       minAmount: "0.025",
       recover: "12 Hours",
@@ -14,7 +14,7 @@ export const faucetInfo = {
       address: "0xA88f1CD3379FC5F407BcEF0c0b396D2314A6Ad61",
     },
   ],
-  Sepolia: [
+  ArbSepolia: [
     {
       name: "QuickNode",
       link: "https://faucet.quicknode.com/arbitrum/sepolia",
@@ -68,6 +68,7 @@ export const faucetInfo = {
       dailySupply: "15",
       required: "None",
       image: "faucets/bwarelabs.svg",
+      address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
     },
     {
       name: "Blast API",
@@ -78,6 +79,7 @@ export const faucetInfo = {
       dailySupply: "15",
       required: "None",
       image: "faucets/blast.png",
+      address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
     },
     {
       name: "Chainlink ",
@@ -88,6 +90,7 @@ export const faucetInfo = {
       dailySupply: "None",
       required: "Github",
       image: "faucets/chainlink.png",
+      address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
     },
   ],
   Stylus: [
@@ -111,6 +114,7 @@ export const faucetInfo = {
       dailySupply: "15",
       required: "None",
       image: "faucets/blast.png",
+      address: "0x74f9028400e383E32DCC5108C021E3C4D36a1CB0",
     },
   ],
 }

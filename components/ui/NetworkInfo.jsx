@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react'
 import { networks } from '@/constants'
 import Link from 'next/link'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+import { spaceAfterCapital } from '@/lib/utils'
 
 function NetworkInfo({ network }) {
+    console.log("network", network);
     const [blockNumber, setBlockNumber] = useState(0)
     const [gasPrice, setGasPrice] = useState(0)
     const leftNetwork = networks[(networks.indexOf(network) - 1) == -1 ? networks.length - 1 : networks.indexOf(network) - 1]
@@ -33,7 +35,7 @@ function NetworkInfo({ network }) {
                 <Link href={`/${leftNetwork}`}>
                     <AiOutlineArrowLeft className="text-white text-2xl" />
                 </Link>
-                <h1 className='mx-3 font-bold text-xl'>{network.toUpperCase()}</h1>
+                <h1 className='mx-3 font-bold text-xl'>{spaceAfterCapital(network)}</h1>
                 <Link href={`/${rightNetwork}`}>
                     <AiOutlineArrowRight className="text-2xl" />
                 </Link>
