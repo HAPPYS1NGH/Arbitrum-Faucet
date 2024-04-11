@@ -6,7 +6,6 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { spaceAfterCapital } from '@/lib/utils'
 
 function NetworkInfo({ network }) {
-    console.log("network", network);
     const [blockNumber, setBlockNumber] = useState(0)
     const [gasPrice, setGasPrice] = useState(0)
     const leftNetwork = networks[(networks.indexOf(network) - 1) == -1 ? networks.length - 1 : networks.indexOf(network) - 1]
@@ -60,7 +59,7 @@ function NetworkInfo({ network }) {
                             animationIterationCount: 'infinite',
                         }}
                     >
-                        Goerli is getting depraceted so move on to Sepolia.
+                        Goerli is depraceted so move on to Sepolia.
                     </div>
                     <style>
                         {`
