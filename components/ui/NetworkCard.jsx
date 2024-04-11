@@ -1,11 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import { spaceAfterCapital } from '@/lib/utils'
 
 function NetworkCard({ name }) {
     return (
         <Link href={`/${name}`} className='my-5 '>
             <div className=' bg-electric-blue w-72 p-6 rounded-lg text-white font-bold text-xl tracking-wider border-4 border-white'>
-                {name.toUpperCase()}
+                {
+                    spaceAfterCapital(name)
+                }
             </div>
         </Link>
     )

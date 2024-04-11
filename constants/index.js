@@ -1,10 +1,21 @@
-export const networks = ["Goerli", "Sepolia", "Stylus"]
+export const networks = ["Sepolia", "ArbSepolia", "Stylus"]
 
 export const faucetInfo = {
-  Goerli: [
+  Sepolia: [
+    {
+      name: "Ethglobal",
+      link: "https://ethglobal.com/faucet",
+      maxAmount: "0.05",
+      minAmount: "0.05",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "EthGlobal Account",
+      image: "faucets/ethglobal.svg",
+      address: "0xcCa1595278f5B8CFdA0380943Af9b56493fA14dE",
+    },
     {
       name: "QuickNode",
-      link: "https://faucet.quicknode.com/arbitrum/goerli",
+      link: "https://faucet.quicknode.com/ethereum/sepolia",
       maxAmount: "0.05",
       minAmount: "0.025",
       recover: "12 Hours",
@@ -14,28 +25,17 @@ export const faucetInfo = {
       address: "0xA88f1CD3379FC5F407BcEF0c0b396D2314A6Ad61",
     },
   ],
-  Sepolia: [
+  ArbSepolia: [
     {
-      name: "QuickNode",
-      link: "https://faucet.quicknode.com/arbitrum/sepolia",
-      maxAmount: "0.1",
+      name: "Ethglobal",
+      link: "https://ethglobal.com/faucet",
+      maxAmount: "0.05",
       minAmount: "0.05",
-      recover: "12 Hours",
+      recover: "24 Hours",
       dailySupply: "None",
-      required: "Mainnet Balance",
-      image: "faucets/quicknode.svg",
-      address: "0x31957B0C184a0870416D2518084adA6E24759193",
-    },
-    {
-      name: "Alchemy",
-      link: "https://www.alchemy.com/faucets/arbitrum-sepolia",
-      maxAmount: "0.5",
-      minAmount: "0.5",
-      recover: "12 Hours",
-      dailySupply: "None",
-      required: "Mainnet Balance",
-      image: "faucets/alchemy.png",
-      address: "0xD8Ea779b8FFC1096CA422D40588C4c0641709890",
+      required: "EthGlobal Account",
+      image: "faucets/ethglobal.svg",
+      address: "0xcCa1595278f5B8CFdA0380943Af9b56493fA14dE",
     },
     {
       name: "Triangle Platform",
@@ -68,6 +68,7 @@ export const faucetInfo = {
       dailySupply: "15",
       required: "None",
       image: "faucets/bwarelabs.svg",
+      address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
     },
     {
       name: "Blast API",
@@ -78,9 +79,10 @@ export const faucetInfo = {
       dailySupply: "15",
       required: "None",
       image: "faucets/blast.png",
+      address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
     },
     {
-      name: "Chainlink ",
+      name: "Chainlink",
       link: "https://faucets.chain.link/arbitrum-sepolia",
       maxAmount: "0.25",
       minAmount: "0.25",
@@ -88,6 +90,40 @@ export const faucetInfo = {
       dailySupply: "None",
       required: "Github",
       image: "faucets/chainlink.png",
+      address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
+    },
+    {
+      name: "L2 Faucet",
+      link: "https://www.l2faucet.com/arbitrum",
+      maxAmount: "0.1",
+      minAmount: "0.1",
+      recover: "No Limit",
+      dailySupply: "None",
+      required: "Passkey",
+      image: "faucets/l2.png",
+      address: "0xd1bd27c9bE2943e8ec0ce43d6F8B8f9Ce434EEb7",
+    },
+    {
+      name: "QuickNode",
+      link: "https://faucet.quicknode.com/arbitrum/sepolia",
+      maxAmount: "0.1",
+      minAmount: "0.05",
+      recover: "12 Hours",
+      dailySupply: "None",
+      required: "Mainnet Balance",
+      image: "faucets/quicknode.svg",
+      address: "0x31957B0C184a0870416D2518084adA6E24759193",
+    },
+    {
+      name: "Alchemy",
+      link: "https://www.alchemy.com/faucets/arbitrum-sepolia",
+      maxAmount: "0.5",
+      minAmount: "0.5",
+      recover: "12 Hours",
+      dailySupply: "None",
+      required: "Mainnet Balance",
+      image: "faucets/alchemy.png",
+      address: "0xD8Ea779b8FFC1096CA422D40588C4c0641709890",
     },
   ],
   Stylus: [
@@ -111,6 +147,7 @@ export const faucetInfo = {
       dailySupply: "15",
       required: "None",
       image: "faucets/blast.png",
+      address: "0x74f9028400e383E32DCC5108C021E3C4D36a1CB0",
     },
   ],
 }
