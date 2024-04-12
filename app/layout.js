@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { Montserrat } from "next/font/google"
 import "./globals.css"
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
