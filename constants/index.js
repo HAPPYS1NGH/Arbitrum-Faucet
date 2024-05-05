@@ -1,4 +1,4 @@
-export const networks = ["Sepolia", "ArbSepolia", "Stylus"]
+export const networks = ["Sepolia", "ArbSepolia", "Stylus"];
 
 export const faucetInfo = {
   Sepolia: [
@@ -14,6 +14,72 @@ export const faucetInfo = {
       address: "0xcCa1595278f5B8CFdA0380943Af9b56493fA14dE",
     },
     {
+      name: "LearnWeb3",
+      link: "https://learnweb3.io/faucets/sepolia/",
+      maxAmount: "0.02",
+      minAmount: "0.02",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "Captcha",
+      image: "faucets/learnweb3.png",
+      address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
+    },
+    {
+      name: "Automata 2.0 Faucet",
+      link: "https://www.sepoliafaucet.io/",
+      maxAmount: "0.001",
+      minAmount: "0.001",
+      recover: "No Limit",
+      dailySupply: "None",
+      required: "Passkey",
+      image: "faucets/automata.png",
+      address: "0x007aB5199B6c57F7aA51bc3D0604a43505501a0C",
+    },
+    {
+      name: "POW Faucet",
+      link: "https://sepolia-faucet.com/",
+      maxAmount: "0.05/min",
+      minAmount: "0.05/min",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "None",
+      image: "faucets/drop.svg",
+      address: "0x987d2f1736F8737d530Bdc7C29fD62B0b9a5A893",
+    },
+    {
+      name: "POW Faucet Pk910",
+      link: "https://sepolia-faucet.pk910.de/",
+      maxAmount: "0.05/min",
+      minAmount: "0.05/min",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "Gitcoin Passport 2",
+      image: "faucets/drop.svg",
+      address: "0x6Cc9397c3B38739daCbfaA68EaD5F5D77Ba5F455",
+    },
+    {
+      name: "Triangle Platform",
+      link: "https://faucet.triangleplatform.com/ethereum/sepolia",
+      maxAmount: "0.001",
+      minAmount: "0.001",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "Captcha",
+      image: "faucets/trianglefaucet.png",
+      address: "0x007aB5199B6c57F7aA51bc3D0604a43505501a0C",
+    },
+    {
+      name: "Google CLoud",
+      link: "https://cloud.google.com/application/web3/faucet/ethereum/sepolia",
+      maxAmount: "0.05",
+      minAmount: "0.05",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "Mainnet Balance",
+      image: "faucets/google-cloud.svg",
+      address: "0xe560cA09958bDB05b776676351114811Ad101e47",
+    },
+    {
       name: "QuickNode",
       link: "https://faucet.quicknode.com/ethereum/sepolia",
       maxAmount: "0.05",
@@ -23,6 +89,18 @@ export const faucetInfo = {
       required: "Mainnet Balance",
       image: "faucets/quicknode.svg",
       address: "0xA88f1CD3379FC5F407BcEF0c0b396D2314A6Ad61",
+    },
+
+    {
+      name: "RockX",
+      link: "https://access.rockx.com/faucet-sepolia",
+      maxAmount: "0.6",
+      minAmount: "0.05",
+      recover: "12 Hours",
+      dailySupply: "None",
+      required: "Mainnet Balance",
+      image: "faucets/rockx.png",
+      address: "0x5594F939d67f56AEDBE80Ff1E9bf776Fd691d960",
     },
   ],
   ArbSepolia: [
@@ -150,4 +228,4 @@ export const faucetInfo = {
       address: "0x74f9028400e383E32DCC5108C021E3C4D36a1CB0",
     },
   ],
-}
+};
