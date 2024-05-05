@@ -1,11 +1,37 @@
-import { Analytics } from "@vercel/analytics/react"
-import { Montserrat } from "next/font/google"
-import "./globals.css"
+import { Analytics } from "@vercel/analytics/react";
+import localFont from "next/font/local";
+import { Montserrat } from "next/font/google";
+import "./globals.css";
 
-import Header from "@/components/shared/header"
-import Footer from "@/components/shared/footer"
+import Header from "@/components/shared/header";
+import Footer from "@/components/shared/footer";
 
-const montserrat = Montserrat({ subsets: ["latin"] })
+const montserrat = Montserrat({ subsets: ["latin"] });
+const conthrax = localFont({
+  src: [
+    {
+      path: "fonts/Conthrax-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "fonts/Conthrax-Regular-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "fonts/Conthrax-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "fonts/Conthrax-Heavy.otf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+});
+
 export const metadata = {
   title: "Arbitrum Faucet App",
   description:
@@ -32,17 +58,17 @@ export const metadata = {
     "Ethereum faucet",
     "Arbitrum testnet",
   ],
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className}  text-center bg-navy`}>
+      <body className={`${conthrax.className}  text-center bg-navy`}>
         <Header />
         {children}
         <Footer />
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
