@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { faucetInfo } from '@/constants'
+import { reduceLink } from '@/lib/utils'
 
 function FaucetInfo({ network }) {
     const faucets = faucetInfo[network]
@@ -25,7 +26,9 @@ function FaucetInfo({ network }) {
                                     {faucet.name}
                                 </h1>
                                 <Link href={faucet.link} className="text-sm" target="_blank" >
-                                    {faucet.link.replace("https://", "")}
+                                    {
+                                        reduceLink(faucet?.link)
+                                    }
                                 </Link>
                             </div>
                         </div>
