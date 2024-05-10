@@ -50,29 +50,15 @@ function NetworkInfo({ network }) {
                 </div>
             </div>
             <div className='bg-white text-navy text-xs py-2 tracking-wider '>
-                <div style={{ position: 'relative' }}>
-                    <div
-                        style={{
-                            animationName: 'slide-left',
-                            animationDuration: '7s',
-                            animationTimingFunction: 'linear',
-                            animationIterationCount: 'infinite',
-                        }}
-                    >
-                        Goerli is depraceted so move on to Sepolia.
-                    </div>
-                    <style>
-                        {`
-          @keyframes slide-left {
-            0% {
-              transform: translateX(100%); /* Move the element off-screen to the right */
-            }
-            100% {
-              transform: translateX(-100%); /* Move the element off-screen to the left */
-            }
-          }
-        `}
-                    </style>
+                <div
+                    style={{
+                        animationName: 'slide-left',
+                        animationDuration: '7s',
+                        animationTimingFunction: 'linear',
+                        animationIterationCount: 'infinite',
+                    }}
+                >
+                    Goerli is depraceted so move on to Sepolia.
                 </div>
             </div>
 
