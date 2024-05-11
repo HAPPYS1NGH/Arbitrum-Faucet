@@ -63,8 +63,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${conthrax.className}  text-center bg-navy`}>
-        <Header />
+      <body className={`${montserrat.className}  text-center bg-navy`}>
+        <nav className={`${conthrax.className}`}>
+          <Header />
+        </nav>
         {children}
         <Footer />
         <Analytics />
