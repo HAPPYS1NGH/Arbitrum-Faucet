@@ -116,6 +116,17 @@ export const faucetInfo = {
       address: "0xcCa1595278f5B8CFdA0380943Af9b56493fA14dE",
     },
     {
+      name: "HackQuest",
+      link: "https://www.hackquest.io/en/faucets/421614",
+      maxAmount: "0.0015",
+      minAmount: "0.0015",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "Hackquest Account",
+      image: "faucets/hackquest.svg",
+      address: "0x70c3Bfe20A9374029fE2dA36b8Be731B66EE13be",
+    },
+    {
       name: "Triangle Platform",
       link: "https://faucet.triangleplatform.com/arbitrum/sepolia",
       maxAmount: "0.001",
