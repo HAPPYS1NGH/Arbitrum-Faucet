@@ -12,6 +12,10 @@ module.exports = {
       "sky-blue": "#9DCCED",
       moon: "#E5E5E5",
       white: "#FFFFFF",
+      red: "#FF0000",
+      orange: "#FFA500",
+      green: "#008000",
+      yellow: "#FFFF00",
     },
 
     extend: {
@@ -38,4 +42,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
