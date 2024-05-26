@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import { faucetInfo } from '@/constants';
-import { reduceLink } from '@/lib/utils';
+import { reduceLink, getBackgroundColor } from '@/lib/utils';
 
 function FaucetInfo({ network }) {
     const initialFaucets = faucetInfo[network];
@@ -87,8 +87,9 @@ function FaucetInfo({ network }) {
                             <h1 className='hidden sm:block font-semibold'>{faucet.required}</h1>
                         </div>
                     </div>
-                    <div className="p-2 border-t-3 bg-electric-blue text-xs">
-                        active {faucet.lastActive}
+
+                    <div className={`p-2 border-t-3 ${getBackgroundColor(faucet?.lastActive)} text-xs`}>
+                        {faucet.lastActive ? `active ${faucet.lastActive}` : "loading..."}
                     </div>
                 </div>
             ))}
