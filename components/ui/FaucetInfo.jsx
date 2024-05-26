@@ -7,8 +7,8 @@ import { faucetInfo } from '@/constants';
 import { reduceLink } from '@/lib/utils';
 
 function FaucetInfo({ network }) {
-    const [faucetData, setFaucetData] = useState([]);
-    const faucets = faucetInfo[network];
+    const initialFaucets = faucetInfo[network];
+    const [faucetData, setFaucetData] = useState(initialFaucets);
 
     useEffect(() => {
         console.log("useEffect triggered with network:", network);
@@ -17,11 +17,30 @@ function FaucetInfo({ network }) {
             try {
                 console.log('fetching faucet info for network:', network);
                 const response = await fetch(`/api/${network.toLowerCase()}/faucet`, {
-                    next: { revalidate: 600 }
+                    cache: "no-store"
                 });
                 const data = await response.json();
-                setFaucetData(data.faucetData);
-                console.log('Fetched faucet info:', data);
+                const fetchedData = data.faucetData;
+
+                // Combine static faucet info with fetched data
+                const combinedData = initialFaucets.map((faucet) => {
+                    const fetchedFaucet = fetchedData.find(data => data.address === faucet.address);
+                    return {
+                        ...faucet,
+                        lastActive: fetchedFaucet?.lastActive || "loading...",
+                        timestamp: fetchedFaucet?.timestamp || 0
+                    };
+                });
+
+                console.log("Before sorting:", combinedData.map(item => ({ name: item.name, timestamp: item.timestamp })));
+
+                // Sort the combined data by timestamp in ascending order
+                combinedData.sort((a, b) => b.timestamp - a.timestamp);
+
+                console.log("After sorting:", combinedData.map(item => ({ name: item.name, timestamp: item.timestamp })));
+
+                setFaucetData(combinedData);
+                console.log('Fetched and sorted faucet info:', combinedData);
             } catch (error) {
                 console.error('Error fetching faucet info:', error);
             }
@@ -32,7 +51,7 @@ function FaucetInfo({ network }) {
 
     return (
         <>
-            {faucets.map((faucet, index) => (
+            {faucetData.map((faucet) => (
                 <div key={faucet.name} className="border-3 border-white sm:w-100 w-96 rounded-lg text-white my-6">
                     <div className="flex p-5 gap-3">
                         <div>
@@ -69,7 +88,7 @@ function FaucetInfo({ network }) {
                         </div>
                     </div>
                     <div className="p-2 border-t-3 bg-electric-blue text-xs">
-                        active {faucetData.length ? faucetData[index]?.lastActive : "loading..."}
+                        active {faucet.lastActive}
                     </div>
                 </div>
             ))}
