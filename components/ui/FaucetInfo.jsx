@@ -4,11 +4,26 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import { faucetInfo } from '@/constants';
-import { reduceLink, getBackgroundColor } from '@/lib/utils';
+import { reduceLink } from '@/lib/utils';
 
 function FaucetInfo({ network }) {
     const initialFaucets = faucetInfo[network];
     const [faucetData, setFaucetData] = useState(initialFaucets);
+
+    const getBackgroundColor = (lastActive) => {
+        if (!lastActive) return "bg-electric-blue"; // Default color when loading
+
+        const timeUnit = lastActive.split(" ")[1];
+        switch (timeUnit) {
+            case "year" || "years":
+                return "bg-red";
+            case "month" || "months":
+                return "bg-orange";
+            default:
+                return "bg-electric-blue"; // Default color for unknown time units
+        }
+    };
+
 
     useEffect(() => {
         console.log("useEffect triggered with network:", network);
