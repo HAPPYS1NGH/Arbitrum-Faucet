@@ -31,11 +31,11 @@ export default async function NetworkInfo({ network }) {
         <div className='text-white text-center mb-6 sm:w-100 w-96 border-white rounded-lg border-3'>
             <div className='flex bg-electric-blue p-5 items-center justify-between'>
                 <Link href={`/${leftNetwork}`}>
-                    <AiOutlineArrowLeft className="text-white text-2xl" />
+                    <AiOutlineArrowLeft className="text-white text-2xl transition duration-300 hover:text-navy" />
                 </Link>
                 <h1 className='mx-3 font-bold text-xl'>{spaceAfterCapital(network)}</h1>
                 <Link href={`/${rightNetwork}`}>
-                    <AiOutlineArrowRight className="text-2xl" />
+                    <AiOutlineArrowRight className="text-2xl hover:text-navy transition duration-300" />
                 </Link>
             </div>
             <div className='flex justify-around py-5 border-t-3'>
