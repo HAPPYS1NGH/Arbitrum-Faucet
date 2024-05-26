@@ -6,7 +6,7 @@ import { spaceAfterCapital } from '@/lib/utils'
 
 async function fetchData(network) {
     try {
-        const response = await fetch(`${process.env.DOMAIN_NAME}/api/${network.toLowerCase()}`, { cache: 'force-cache', next: { revalidate: 600 } });
+        const response = await fetch(`${process.env.DOMAIN_NAME}/api/${network.toLowerCase()}`, { next: { revalidate: 600 } });
         const data = await response.json();
         return {
             blockNumber: data.blockNumber,
