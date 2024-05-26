@@ -28,7 +28,8 @@ function FaucetInfo({ network }) {
                     return {
                         ...faucet,
                         lastActive: fetchedFaucet?.lastActive || "loading...",
-                        timestamp: fetchedFaucet?.timestamp || 0
+                        timestamp: fetchedFaucet?.timestamp || 0,
+                        faucetDown: fetchedFaucet?.faucetDown || false
                     };
                 });
 
@@ -52,7 +53,7 @@ function FaucetInfo({ network }) {
     return (
         <>
             {faucetData.map((faucet) => (
-                <div key={faucet.name} className="border-3 border-white sm:w-100 w-96 rounded-lg text-white my-6">
+                <div key={faucet.name} className={`border-3 ${faucet.faucetDown ? "border-red" : "border-white"} sm:w-100 w-96 rounded-lg text-white my-6`}>
                     <div className="flex p-5 gap-3">
                         <div>
                             <Link href={faucet.link} target="_blank">
