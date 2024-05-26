@@ -24,7 +24,9 @@ export async function GET() {
           const res = await fetch(
             `https://api-sepolia.arbiscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=1&offset=1&sort=desc&apikey=${process.env.ARBISCAN_API_KEY}`,
             {
-              cache: "no-store",
+              next: {
+                revalidate: 600,
+              },
             }
           );
           const data = await res.json();

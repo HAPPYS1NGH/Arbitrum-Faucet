@@ -23,7 +23,9 @@ export async function GET() {
             "." +
             bal.toString().slice(-18).slice(0, 4);
           const res = await fetch(link, {
-            cache: "no-store",
+            next: {
+              revalidate: 600,
+            },
           });
 
           // Check if response status is OK

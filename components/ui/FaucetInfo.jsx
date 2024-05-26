@@ -17,7 +17,9 @@ function FaucetInfo({ network }) {
             try {
                 console.log('fetching faucet info for network:', network);
                 const response = await fetch(`/api/${network.toLowerCase()}/faucet`, {
-                    cache: "no-store"
+                    next: {
+                        revalidate: 600,
+                    },
                 });
                 const data = await response.json();
                 const fetchedData = data.faucetData;
