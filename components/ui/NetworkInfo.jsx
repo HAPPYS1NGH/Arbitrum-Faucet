@@ -1,36 +1,35 @@
-'use client'
-import { useState, useEffect } from 'react'
 import { networks } from '@/constants'
 import Link from 'next/link'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { spaceAfterCapital } from '@/lib/utils'
 
-function NetworkInfo({ network }) {
-    const [blockNumber, setBlockNumber] = useState(0)
-    const [gasPrice, setGasPrice] = useState(0)
-    const leftNetwork = networks[(networks.indexOf(network) - 1) == -1 ? networks.length - 1 : networks.indexOf(network) - 1]
-    const rightNetwork = networks[(networks.indexOf(network) + 1) == networks.length ? 0 : networks.indexOf(network) + 1]
 
-
-    useEffect(() => {
-        const fetchData = async () => {
-            console.log("Fetching data")
-            try {
-                const response = await fetch(`/api/${network.toLowerCase()}`, { cache: 'force-cache', next: { revalidate: 3600 } });
-                const data = await response.json();
-                setBlockNumber(data.blockNumber);
-                setGasPrice(data.gasPrice);
-            } catch (error) {
-                console.error('Error fetching block number and gas fee:', error);
-            }
+async function fetchData(network) {
+    try {
+        const response = await fetch(`${process.env.DOMAIN_NAME}/api/${network.toLowerCase()}`, { next: { revalidate: 600 } });
+        const data = await response.json();
+        return {
+            blockNumber: data.blockNumber,
+            gasPrice: data.gasPrice
         };
+    } catch (error) {
+        console.error('Error fetching block number and gas fee:', error);
+        return {
+            blockNumber: 0,
+            gasPrice: 0
+        };
+    }
+}
 
-        fetchData();
-    }, []);
+
+export default async function NetworkInfo({ network }) {
+    const { blockNumber, gasPrice } = await fetchData(network);
+    const leftNetwork = networks[(networks.indexOf(network) - 1) == -1 ? networks.length - 1 : networks.indexOf(network) - 1];
+    const rightNetwork = networks[(networks.indexOf(network) + 1) == networks.length ? 0 : networks.indexOf(network) + 1];
 
     return (
         <div className='text-white text-center mb-6 sm:w-100 w-96 border-white rounded-lg border-3'>
-            <div className='flex bg-electric-blue p-5  items-center justify-between'>
+            <div className='flex bg-electric-blue p-5 items-center justify-between'>
                 <Link href={`/${leftNetwork}`}>
                     <AiOutlineArrowLeft className="text-white text-2xl" />
                 </Link>
@@ -39,33 +38,19 @@ function NetworkInfo({ network }) {
                     <AiOutlineArrowRight className="text-2xl" />
                 </Link>
             </div>
-            <div className='flex justify-around py-5  border-t-3 '>
+            <div className='flex justify-around py-5 border-t-3'>
                 <div>
                     <p className='text-sm'>Latest Block</p>
-                    <h1 className=' text-lg font-semibold '>{blockNumber}</h1>
+                    <h1 className='text-lg font-semibold'>{blockNumber}</h1>
                 </div>
                 <div>
                     <p className='text-sm'>Gas Price</p>
-                    <h1 className=' text-lg font-semibold'>{gasPrice}</h1>
+                    <h1 className='text-lg font-semibold'>{gasPrice}</h1>
                 </div>
             </div>
-            <div className='bg-white text-navy text-xs py-2 tracking-wider '>
-                <div
-                    style={{
-                        animationName: 'slide-left',
-                        animationDuration: '7s',
-                        animationTimingFunction: 'linear',
-                        animationIterationCount: 'infinite',
-                    }}
-                >
-                    Goerli is depraceted so move on to Sepolia.
-                </div>
+            <div className='bg-white text-navy text-xs py-2 tracking-wider'>
+                Goerli is deprecated so move on to Sepolia.
             </div>
-
         </div>
     )
 }
-
-export default NetworkInfo
-
-//  w-72 rounded-lg text-white font-bold text-xl tracking-wider border-4 border-white
