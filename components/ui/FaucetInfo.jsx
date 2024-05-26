@@ -3,14 +3,31 @@ import Image from "next/image"
 import { faucetInfo } from '@/constants'
 import { reduceLink } from '@/lib/utils'
 
-function FaucetInfo({ network }) {
+async function getFaucetInfo(network) {
+    try {
+        const response = await fetch(`${process.env.DOMAIN_NAME}/api/${network.toLowerCase()}/faucet`, {
+            next: {
+                revalidate: 600
+            }
+        })
+        const data = await response.json()
+        console.log("/////////FAUCEt DATA//////////");
+        return data.faucetData
+    } catch (error) {
+        console.error('Error fetching faucet info:', error)
+    }
+}
+async function FaucetInfo({ network }) {
     const faucets = faucetInfo[network]
+    const faucetData = await getFaucetInfo(network)
     console.log("FAUCETS ")
     console.log(faucets)
+    console.log("FAUCET DATA")
+    console.log(faucetData)
 
     return (<>
         {
-            faucets.map((faucet) => {
+            faucets.map((faucet, index) => {
                 console.log(faucet)
                 return (
                     <div key={faucet.name} className="border-3 border-white sm:w-100 w-96 rounded-lg text-white  my-6
@@ -62,7 +79,7 @@ function FaucetInfo({ network }) {
 
 
                         <div className=" p-2 border-t-3 bg-electric-blue text-xs">
-                            active 3 minutes ago
+                            active {faucetData[index].lastActive}
                         </div>
                     </div>
                 )
