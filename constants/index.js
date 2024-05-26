@@ -113,7 +113,7 @@ export const faucetInfo = {
       dailySupply: "None",
       required: "EthGlobal Account",
       image: "faucets/ethglobal.svg",
-      address: "0xcCa1595278f5B8CFdA0380943Af9b56493fA14dE",
+      address: "0xcca1595278f5b8cfda0380943af9b56493fa14de",
     },
     {
       name: "HackQuest",
@@ -212,7 +212,7 @@ export const faucetInfo = {
       dailySupply: "None",
       required: "Mainnet Balance",
       image: "faucets/alchemy.png",
-      address: "0xD8Ea779b8FFC1096CA422D40588C4c0641709890",
+      address: "0x631e9b031b16b18172a2b9d66c3668a68a668d20",
     },
   ],
   Stylus: [
