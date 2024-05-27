@@ -1,8 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Arbitrum Faucet 🌉💧
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-14.0-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
+![Web3](https://img.shields.io/badge/Web3-Blockchain-green)
+![Vercel](https://img.shields.io/badge/Vercel-Deployment-black)
 
-First, run the development server:
+A website to display all the available faucets for obtaining Arbitrum Testnet Tokens across Ethereum Sepolia, Arbitrum Sepolia and Arbitrum Stylus network.
+
+## 🚀 Demo
+
+Check out the live demo: [Arbitrum Faucet](https://arbitrum-faucet.vercel.app/)
+
+## 📚 Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## ✨ Features
+
+- Display all faucets for Arbitrum Testnet Tokens.
+- Easy navigation and user-friendly interface.
+- Integration with multiple networks.
+- Optimized for performance and accessibility.
+
+## 🛠️ Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/HAPPYS1NGH/Arbitrum-Faucet.git
+cd Arbitrum-Faucet
+npm install
+```
+
+## 🚀 Usage
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +52,35 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🧩 Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+We welcome contributions! Please follow these steps:
 
-## Learn More
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feat/feature-name-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'feat: add some feature'`).
+5. Push to the branch (`git push origin feat/feature-name-branch`).
+6. Open a pull request.
 
-To learn more about Next.js, take a look at the following resources:
+## ➕ Adding Faucets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To add a new faucet, modify the constants/index.js file with the following format:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```javascript
+{
+  name: "FaucetName",
+  link: "faucetlink",
+  maxAmount: "0.05", // Copy same if not applicable
+  minAmount: "0.05", // Copy same if not applicable
+  recover: "24 Hours",
+  dailySupply: "None",
+  required: "Requirement Needed",
+  image: "faucets/{faucetname.svg}}",
+  address: "0x12..", // Wallet which drips the tokens
+},
+```
 
-## Deploy on Vercel
+## 📜 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License.
