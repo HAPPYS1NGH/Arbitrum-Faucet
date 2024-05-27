@@ -14,6 +14,17 @@ export const faucetInfo = {
       address: "0xcCa1595278f5B8CFdA0380943Af9b56493fA14dE",
     },
     {
+      name: "Alchemy",
+      link: "https://www.alchemy.com/faucets/arbitrum-sepolia",
+      maxAmount: "0.1",
+      minAmount: "0.1",
+      recover: "24 Hours",
+      dailySupply: "None",
+      required: "Mainnet Balance",
+      image: "faucets/alchemy.png",
+      address: "0x7Ed746476A7F6520BABD24eeE1fDbCD0F7FB271f",
+    },
+    {
       name: "LearnWeb3",
       link: "https://learnweb3.io/faucets/sepolia/",
       maxAmount: "0.02",
