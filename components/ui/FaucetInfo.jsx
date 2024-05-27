@@ -24,7 +24,6 @@ function FaucetInfo({ network }) {
         }
     };
 
-
     useEffect(() => {
         console.log("useEffect triggered with network:", network);
 
@@ -59,12 +58,21 @@ function FaucetInfo({ network }) {
 
                 setFaucetData(combinedData);
                 console.log('Fetched and sorted faucet info:', combinedData);
+
+                // Store the fetched data in session storage
+                sessionStorage.setItem(`faucetData_${network}`, JSON.stringify(combinedData));
             } catch (error) {
                 console.error('Error fetching faucet info:', error);
             }
         };
 
-        getFaucetInfo();
+        // Check if data is available in session storage
+        const storedData = sessionStorage.getItem(`faucetData_${network}`);
+        if (storedData) {
+            setFaucetData(JSON.parse(storedData));
+        } else {
+            getFaucetInfo();
+        }
     }, [network]);
 
     return (
