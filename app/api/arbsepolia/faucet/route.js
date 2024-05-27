@@ -1,5 +1,6 @@
 import { arbitrumSepoliaClient } from "@/lib/client";
 import { faucetInfo } from "@/constants";
+import { getLastTransactionTimestampForAddress } from "@/lib/utils/arbitrumSDK";
 
 export async function GET() {
   try {
@@ -20,18 +21,14 @@ export async function GET() {
             bal.toString().slice(0, -18) +
             "." +
             bal.toString().slice(-18).slice(0, 4);
+          console.log("HIHIHIIHHIHHIH bal", balance);
 
-          const res = await fetch(
-            `https://api-sepolia.arbiscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=1&offset=1&sort=desc&apikey=${process.env.ARBISCAN_API_KEY}`,
-            {
-              next: {
-                revalidate: 600,
-              },
-            }
+          const lastActive = await getLastTransactionTimestampForAddress(
+            address,
+            "arb-sepolia"
           );
-          const data = await res.json();
-          const lastActive = data.result[0].timeStamp;
-          console.log("lastActive after data.result", lastActive);
+
+          console.log("lastActive after data.result in ARB", lastActive);
           // Convert the time elapsed between the last active time and the current time in UTC accrodingly in minutes, hours, days, weeks, months or years
           const timeElapsed = Date.now() / 1000 - lastActive;
           console.log("timeElapsed", timeElapsed);

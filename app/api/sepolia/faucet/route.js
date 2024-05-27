@@ -17,7 +17,10 @@ const processAddress = async (address) => {
       "." +
       bal.toString().slice(-18).slice(0, 4);
 
-    const lastActive = await getLastTransactionTimestampForAddress(address);
+    const lastActive = await getLastTransactionTimestampForAddress(
+      address,
+      "sepolia"
+    );
     console.log("lastActive after data.result", lastActive);
 
     // Convert the time elapsed between the last active time and the current time in UTC accordingly in minutes, hours, days, weeks, months or years
