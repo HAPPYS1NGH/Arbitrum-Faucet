@@ -2,9 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Loader } from "lucide-react";
 
 import { faucetInfo } from '@/constants';
 import { reduceLink } from '@/lib/utils';
+
 
 function FaucetInfo({ network }) {
     const initialFaucets = faucetInfo[network];
@@ -43,6 +45,7 @@ function FaucetInfo({ network }) {
                     const fetchedFaucet = fetchedData.find(data => data.address === faucet.address);
                     return {
                         ...faucet,
+                        balance: fetchedFaucet?.balance || 0,
                         lastActive: fetchedFaucet?.lastActive || "loading...",
                         timestamp: fetchedFaucet?.timestamp || 0,
                         faucetDown: fetchedFaucet?.faucetDown || false
@@ -92,7 +95,7 @@ function FaucetInfo({ network }) {
                             </Link>
                         </div>
                     </div>
-                    <div className='flex justify-around pb-5'>
+                    <div className='flex justify-around align-middle pb-5'>
                         <div>
                             <p className='text-sm'>Amount</p>
                             <h1 className='font-semibold '>
@@ -100,8 +103,11 @@ function FaucetInfo({ network }) {
                             </h1>
                         </div>
                         <div>
-                            <p className='text-sm'>Gas Cost</p>
-                            <h1 className='font-semibold'>1 Gwei</h1>
+                            <p className='text-sm '>Balance</p>
+                            <h1 className='font-semibold text-center'>{faucet.balance ? parseFloat(faucet.balance).toFixed(2) : <div className="text-center">
+                                <Loader className=" animate-spin" />
+                            </div>
+                            }</h1>
                         </div>
                         <div>
                             <p className='text-sm'>Daily Supply</p>
