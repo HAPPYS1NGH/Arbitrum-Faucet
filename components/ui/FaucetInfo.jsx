@@ -25,11 +25,8 @@ function FaucetInfo({ network }) {
     };
 
     useEffect(() => {
-        console.log("useEffect triggered with network:", network);
-
         const getFaucetInfo = async () => {
             try {
-                console.log('fetching faucet info for network:', network);
                 const response = await fetch(`/api/${network.toLowerCase()}/faucet`, {
                     next: {
                         revalidate: 600,
@@ -48,18 +45,9 @@ function FaucetInfo({ network }) {
                         faucetDown: fetchedFaucet?.faucetDown || false
                     };
                 });
-
-                console.log("Before sorting:", combinedData.map(item => ({ name: item.name, timestamp: item.timestamp })));
-
                 // Sort the combined data by timestamp in ascending order
                 combinedData.sort((a, b) => b.timestamp - a.timestamp);
-
-                console.log("After sorting:", combinedData.map(item => ({ name: item.name, timestamp: item.timestamp })));
-
                 setFaucetData(combinedData);
-                console.log('Fetched and sorted faucet info:', combinedData);
-
-                // Store the fetched data in session storage
                 sessionStorage.setItem(`faucetData_${network}`, JSON.stringify(combinedData));
             } catch (error) {
                 console.error('Error fetching faucet info:', error);
