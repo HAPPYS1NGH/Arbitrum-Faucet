@@ -1,4 +1,4 @@
-export const networks = ["Sepolia", "ArbSepolia", "Stylus"];
+export const networks = ["Sepolia", "ArbSepolia"];
 
 export const faucetInfo = {
   Sepolia: [
@@ -224,30 +224,6 @@ export const faucetInfo = {
       required: "Mainnet Balance",
       image: "faucets/alchemy.png",
       address: "0x631e9b031b16b18172a2b9d66c3668a68a668d20",
-    },
-  ],
-  Stylus: [
-    {
-      name: "BWare Labs",
-      link: "https://bwarelabs.com/faucets/arbitrum-stylus-testnet",
-      maxAmount: "0.05",
-      minAmount: "0.025",
-      recover: "24 Hours",
-      dailySupply: "15",
-      required: "None",
-      image: "faucets/bwarelabs.svg",
-      address: "0xb76debe515171c0fe30b98f117bb9c11bbb6ad5d",
-    },
-    {
-      name: "Blast API",
-      link: "https://blastapi.io/faucets/arbitrum-stylus",
-      maxAmount: "0.075",
-      minAmount: "0.025",
-      recover: "24 Hours",
-      dailySupply: "15",
-      required: "None",
-      image: "faucets/blast.png",
-      address: "0x74f9028400e383E32DCC5108C021E3C4D36a1CB0",
     },
   ],
 };

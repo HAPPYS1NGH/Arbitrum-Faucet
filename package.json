@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
-    "cheerio": "^1.0.0-rc.12",
     "next": "14.0.0",
     "posthog-js": "^1.234.4",
     "react": "^18",
