@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { PostHogProvider } from "@/app/providers";
 
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
@@ -64,12 +65,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${montserrat.className}  text-center bg-navy`}>
-        <nav className={`${conthrax.className}`}>
-          <Header />
-        </nav>
-        {children}
-        <Footer />
-        <Analytics />
+        <PostHogProvider>
+          <nav className={`${conthrax.className}`}>
+            <Header />
+          </nav>
+          {children}
+          <Footer />
+          <Analytics />
+        </PostHogProvider>
       </body>
     </html>
   );
