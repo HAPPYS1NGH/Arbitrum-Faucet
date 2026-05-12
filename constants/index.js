@@ -32,7 +32,7 @@ export const faucetInfo = {
       recover: "2 Hours",
       dailySupply: "None",
       required: "None",
-      image: "https://openfaucet.org/logo.png",
+      image: "faucets/openfaucetorg.png",
       address: "0x6752365ce8c2330fe7422B6322823BcdA2B74F67",
     },
     {
