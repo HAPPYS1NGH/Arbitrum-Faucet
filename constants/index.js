@@ -27,12 +27,12 @@ export const faucetInfo = {
     {
       name: "OpenFaucet.org",
       link: "https://openfaucet.org/arbitrum-sepolia",
-      maxAmount: "0.1",
-      minAmount: "0.1",
+      maxAmount: "0.5",
+      minAmount: "0.05",
       recover: "2 Hours",
       dailySupply: "None",
       required: "None",
-      image: "faucets/openfaucetorg.png",
+      image: "https://openfaucet.org/logo.png",
       address: "0x6752365ce8c2330fe7422B6322823BcdA2B74F67",
     },
     {
