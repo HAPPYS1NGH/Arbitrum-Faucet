@@ -15,9 +15,11 @@ function FaucetInfo({ network }) {
 
         const timeUnit = lastActive.split(" ")[1];
         switch (timeUnit) {
-            case "year" || "years":
+            case "year":
+            case "years":
                 return "bg-red";
-            case "month" || "months":
+            case "month":
+            case "months":
                 return "bg-orange";
             default:
                 return "bg-electric-blue"; // Default color for unknown time units

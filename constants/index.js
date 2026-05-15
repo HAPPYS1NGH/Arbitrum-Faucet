@@ -26,7 +26,7 @@ export const faucetInfo = {
     },
     {
       name: "OpenFaucet.org",
-      link: "https://openfaucet.org/arbitrum-sepolia",
+      link: "https://openfaucet.org/ethereum-sepolia",
       maxAmount: "0.5",
       minAmount: "0.05",
       recover: "2 Hours",
@@ -169,6 +169,17 @@ export const faucetInfo = {
       required: "Captcha",
       image: "faucets/learnweb3.png",
       address: "0x625BCC1142E97796173104A6e817Ee46C593b3C5",
+    },
+    {
+      name: "OpenFaucet.org",
+      link: "https://openfaucet.org/arbitrum-sepolia",
+      maxAmount: "0.5",
+      minAmount: "0.05",
+      recover: "2 Hours",
+      dailySupply: "None",
+      required: "None",
+      image: "faucets/openfaucetorg.png",
+      address: "0x6752365ce8c2330fe7422B6322823BcdA2B74F67",
     },
     {
       name: "BWare Labs",
